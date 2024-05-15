@@ -33,6 +33,17 @@
         }
       }
     }, null, 2);
+
+    window.customCode = 
+`
+s.eVar3 = "Custom Var";
+s.prop3 = "Custom Prop";
+
+if (digitalData.page === "product") {
+  s.events = "event1,event2=2.99,event3:12345,event4=5:2345";
+  s.products = "Dresses;1234;1;109.99;event3=200;eVar1=ADBE Demo";
+}
+`;
   </script>
 </head>
 
@@ -92,6 +103,24 @@
     }
   }
 }</pre>
+    </div>
+  </div>
+
+  <div class="card w-75">
+    <div class="card-header">
+      Analytics Custom Code
+    </div>
+    <div class="card-body">
+      <button class="btn btn-primary" onclick="navigator.clipboard.writeText(window.customCode.toString())">Copy</button>
+      <pre>
+        s.eVar3 = "Custom Var";
+        s.prop3 = "Custom Prop";
+        
+        if (digitalData.page === "product") {
+          s.events = "event1,event2=2.99,event3:12345,event4=5:2345";
+          s.products = "Dresses;1234;1;109.99;event3=200;eVar1=ADBE Demo";
+        }
+      </pre>
     </div>
   </div>
 
